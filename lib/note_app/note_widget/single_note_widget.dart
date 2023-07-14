@@ -58,37 +58,48 @@ class SingleNote extends StatelessWidget {
             ),
           ],
         ),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: AppColor().mainColor,
+        child: GestureDetector(
+          onTap: (){Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => NoteEditData(
+                index: index,
+                name: helper.name,
+              ),
             ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                helper.name,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+          );},
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: AppColor().mainColor,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  helper.name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                helper.age,
-                maxLines: 1,
-                style: const TextStyle(
-                  overflow: TextOverflow.ellipsis,
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-            ],
+                Text(
+                  helper.age,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
