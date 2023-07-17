@@ -49,6 +49,15 @@ class _NoteEditDataState extends State<NoteEditData> {
           child: ListView(
             children: [
               TextFormField(
+
+                onChanged: (value){
+                  final titleValue = ModelClass(
+                    name: _nameController.text,
+                    age: _ageController.text,
+                  );
+                  Hive.box("NoteBox").putAt(widget.index, titleValue);
+                },
+
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return '';
@@ -73,6 +82,16 @@ class _NoteEditDataState extends State<NoteEditData> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: TextFormField(
+
+                  onChanged: (value){
+                    final noteValue = ModelClass(
+                      name: _nameController.text,
+                      age: _ageController.text,
+                    );
+                    Hive.box("NoteBox").putAt(widget.index, noteValue);
+                  },
+
+
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '';

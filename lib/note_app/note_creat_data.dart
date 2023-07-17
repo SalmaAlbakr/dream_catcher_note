@@ -15,6 +15,8 @@ class _NoteCreateDataState extends State<NoteCreateData> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
+  String title = "";
+  String note = "";
 
   @override
   void dispose() {
@@ -25,6 +27,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
 
   @override
   Widget build(BuildContext context) {
+    var box = Hive.box("NoteBox");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFc793ce),
@@ -97,7 +100,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     final value = ModelClass(
-                        name: _nameController.text, age: _ageController.text);
+                        name: title, age: note);
                     Hive.box("NoteBox").add(value);
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(

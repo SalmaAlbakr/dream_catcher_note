@@ -15,28 +15,31 @@ void main() async {
   Hive.registerAdapter(ModelClassAdapter());
   await Hive.openBox("NoteBox");
 
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    home: NoteHomeScreen(),
+  ));
+  //runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return DynamicColorTheme(
-      data: (Color color, bool isDark) {
-        return buildTheme(color, isDark); // TODO define your own buildTheme method here
-      },
-      defaultColor: Colors.black,
-      defaultIsDark: false,
-      themedWidgetBuilder: (BuildContext context, ThemeData theme) {
-        return MaterialApp(
-          home: NoteHomeScreen(),
-        );
-      },
-    );
-  }
-
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return DynamicColorTheme(
+//       data: (Color color, bool isDark) {
+//         return buildTheme( color, isDark); // TODO define your own buildTheme method here
+//       },
+//       defaultColor: Colors.black,
+//       defaultIsDark: false,
+//       themedWidgetBuilder: (BuildContext context, ThemeData theme) {
+//         return MaterialApp(
+//           home: NoteHomeScreen(),
+//         );
+//       },
+//     );
+//   }
+// }
 
 
 

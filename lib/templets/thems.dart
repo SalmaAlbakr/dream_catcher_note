@@ -10,9 +10,9 @@ class AppColor {
 
 class buildTheme{
   Color maintheme = Colors.black;
-  Color bool =  isDark;
+   bool isDark = true;
 
-  buildTheme(Color color, bool isDark);
+  buildTheme( this.maintheme,  this.isDark);
 }
 /*
 MaterialApp(
