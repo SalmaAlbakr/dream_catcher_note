@@ -4,7 +4,7 @@ import 'package:dream_catcher_note/templets/thems.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class SingleNote extends StatelessWidget {
   const SingleNote({
     Key? key,
@@ -38,7 +38,7 @@ class SingleNote extends StatelessWidget {
                 );
               },
               icon: Icons.edit,
-              label: "Edit",
+              label: "edit".tr(),
               backgroundColor: Colors.greenAccent,
               foregroundColor: Colors.white,
             ),
@@ -52,14 +52,14 @@ class SingleNote extends StatelessWidget {
                 hiveBox.deleteAt(index);
               },
               icon: Icons.delete,
-              label: "delete",
+              label: "delete".tr(),
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
             ),
           ],
         ),
         child: GestureDetector(
-          onTap: (){Navigator.of(context).push(
+          onTap: (){Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) => NoteEditData(
                 index: index,

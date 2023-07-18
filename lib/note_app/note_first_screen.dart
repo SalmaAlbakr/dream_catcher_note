@@ -3,7 +3,7 @@ import 'package:dream_catcher_note/note_app/note_creat_data.dart';
 import 'package:dream_catcher_note/note_app/note_widget/single_note_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class NoteHomeScreen extends StatefulWidget {
   const NoteHomeScreen({Key? key}) : super(key: key);
 
@@ -28,7 +28,27 @@ class _NoteHomeScreenState extends State<NoteHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notes"),
+        title: Row(
+          children: [
+             Text("AppName".tr()),
+            Expanded(child: SizedBox()),
+            ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+                clipBehavior: Clip.hardEdge,
+                onPressed: (){
+                  //   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ChangeColor()));
+
+                  if (context.locale == Locale('ar')){
+
+                    context.setLocale(Locale('en'));
+                  } else{
+                    context.setLocale(Locale('ar'));
+                  }
+                }, child: Text("Lang".tr(),style: TextStyle(color: Colors.black),)),
+          ],
+        ),
         backgroundColor: const Color(0xFFc793ce),
       ),
       floatingActionButton: FloatingActionButton(

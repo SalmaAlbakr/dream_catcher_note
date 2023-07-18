@@ -3,7 +3,7 @@ import 'package:dream_catcher_note/note_app/note_first_screen.dart';
 import 'package:dream_catcher_note/templets/thems.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class NoteEditData extends StatefulWidget {
   int index;
   String name;
@@ -72,7 +72,7 @@ class _NoteEditDataState extends State<NoteEditData> {
                       color: AppColor().mainColor,
                     ),
                   ),
-                  hintText: "title",
+                  hintText: "title".tr(),
                   border: const OutlineInputBorder(),
                 ),
               ),
@@ -109,7 +109,7 @@ class _NoteEditDataState extends State<NoteEditData> {
                         color: AppColor().mainColor,
                       ),
                     ),
-                    hintText: "note",
+                    hintText: "note".tr(),
                     border: const OutlineInputBorder(),
                   ),
                 ),
@@ -137,7 +137,7 @@ class _NoteEditDataState extends State<NoteEditData> {
                     Color(0xFF533f6a),
                   ),
                 ),
-                child: const Text("Done"),
+                child: Text("done".tr()),
               ),
             ],
           ),

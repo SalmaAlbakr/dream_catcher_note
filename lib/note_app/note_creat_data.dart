@@ -3,7 +3,7 @@ import 'package:dream_catcher_note/note_app/note_first_screen.dart';
 import 'package:dream_catcher_note/templets/thems.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class NoteCreateData extends StatefulWidget {
   const NoteCreateData({Key? key}) : super(key: key);
 
@@ -31,7 +31,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFc793ce),
-        title: const Text("Notes"),
+        title:  Text("AppName" .tr()),
       ),
       body: Form(
         key: formKey,
@@ -57,7 +57,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                       color: AppColor().mainColor,
                     ),
                   ),
-                  hintText: "title",
+                  hintText: "title" .tr(),
                   border: const OutlineInputBorder(),
                 ),
               ),
@@ -84,7 +84,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                         color: AppColor().mainColor,
                       ),
                     ),
-                    hintText: "note",
+                    hintText: "note".tr(),
                     border: const OutlineInputBorder(),
                   ),
                 ),
@@ -109,7 +109,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                     );
                   }
                 },
-                child: const Text("create"),
+                child:  Text("create".tr()),
               ),
             ],
           ),
