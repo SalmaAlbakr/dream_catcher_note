@@ -1,3 +1,4 @@
+import 'package:dream_catcher_note/main.dart';
 import 'package:dream_catcher_note/note_app/model_class.dart';
 import 'package:dream_catcher_note/note_app/note_creat_data.dart';
 import 'package:dream_catcher_note/note_app/note_widget/single_note_widget.dart';
@@ -47,6 +48,15 @@ class _NoteHomeScreenState extends State<NoteHomeScreen> {
                     context.setLocale(Locale('ar'));
                   }
                 }, child: Text("Lang".tr(),style: TextStyle(color: Colors.black),)),
+            // if mode == dark ?
+
+             ElevatedButton(
+                onPressed: () => FirstScreen.of(context).changeTheme(ThemeMode.light),
+                child: Text('Light')),
+            // :
+            ElevatedButton(
+                onPressed: () => FirstScreen.of(context).changeTheme(ThemeMode.dark),
+                child: Text('Dark')),
           ],
         ),
         backgroundColor: const Color(0xFFc793ce),

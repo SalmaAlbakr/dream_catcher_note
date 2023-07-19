@@ -28,17 +28,36 @@ void main() async {
 }
 
 
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
   @override
+  State<FirstScreen> createState() => _FirstScreenState();
+  static _FirstScreenState of(BuildContext context) =>
+      context.findAncestorStateOfType<_FirstScreenState>()!;
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  ThemeMode _themeMode = ThemeMode.system;
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(brightness: Brightness.light,),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          /* dark theme settings */
+        ),
+        themeMode: _themeMode,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         home:
         NoteHomeScreen());
+  }
+  void changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
   }
 }
 // class MyApp extends StatelessWidget {
