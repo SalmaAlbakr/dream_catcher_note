@@ -15,8 +15,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
-  String title = "";
-  String note = "";
+
 
   @override
   void dispose() {
@@ -99,8 +98,8 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     final value = ModelClass(
-                        name: title, age: note);
-                    Hive.box("NoteBox").add(value);
+                        name: _nameController.text, age: _ageController.text);
+                    box.add(value);
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const NoteHomeScreen(),
