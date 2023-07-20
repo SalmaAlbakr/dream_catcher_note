@@ -39,7 +39,6 @@ class _NoteEditDataState extends State<NoteEditData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFc793ce),
         title: Text(widget.name),
       ),
       body: Form(

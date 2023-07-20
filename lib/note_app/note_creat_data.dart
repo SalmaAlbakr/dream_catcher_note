@@ -30,7 +30,6 @@ class _NoteCreateDataState extends State<NoteCreateData> {
     var box = Hive.box("NoteBox");
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFc793ce),
         title:  Text("AppName" .tr()),
       ),
       body: Form(

@@ -42,8 +42,24 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(brightness: Brightness.light,),
+      theme: ThemeData(
+     appBarTheme: AppBarTheme(color: Color(0xFFc793ce)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color(0xFFc793ce))
+            )
+        ),
+        brightness: Brightness.light,),
+
+
         darkTheme: ThemeData(
+          //6528F7
+         appBarTheme: AppBarTheme(color: Color(0xFF624F82)),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Color(0xFF533f6a))
+            )
+          ),
           brightness: Brightness.dark,
           /* dark theme settings */
         ),

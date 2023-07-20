@@ -7,6 +7,9 @@
    "create" : "Create",
    "edit" : "Edit",
    "delete" : "Delete",
-   "done" : "Done"
+   "done" : "Done",
+ "setting" : "Settings",
+ "Dark" : "Dark",
+ "Light" : "Light"
 
 }

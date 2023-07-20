@@ -47,7 +47,6 @@ class _NoteHomeScreenState extends State<NoteHomeScreen> {
                 child: Icon(Icons.settings))
           ],
         ),
-        backgroundColor: const Color(0xFFc793ce),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF533f6a),
