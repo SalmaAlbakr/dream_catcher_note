@@ -4,6 +4,7 @@ import 'package:dream_catcher_note/templets/thems.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:easy_localization/easy_localization.dart';
+
 class NoteCreateData extends StatefulWidget {
   const NoteCreateData({Key? key}) : super(key: key);
 
@@ -15,7 +16,6 @@ class _NoteCreateDataState extends State<NoteCreateData> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey();
-
 
   @override
   void dispose() {
@@ -29,7 +29,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
     var box = Hive.box("NoteBox");
     return Scaffold(
       appBar: AppBar(
-        title:  Text("AppName" .tr()),
+        title: Text("AppName".tr()),
       ),
       body: Form(
         key: formKey,
@@ -55,7 +55,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                       color: AppColor().mainColor,
                     ),
                   ),
-                  hintText: "title" .tr(),
+                  hintText: "title".tr(),
                   border: const OutlineInputBorder(),
                 ),
               ),
@@ -107,7 +107,7 @@ class _NoteCreateDataState extends State<NoteCreateData> {
                     );
                   }
                 },
-                child:  Text("create".tr()),
+                child: Text("create".tr()),
               ),
             ],
           ),

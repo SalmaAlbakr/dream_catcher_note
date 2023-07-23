@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
+
 class SingleNote extends StatelessWidget {
-  const SingleNote({
-    Key? key,
-    required this.helper,
-    required this.hiveBox,
-    required this.index
-  }) : super(key: key);
+  const SingleNote(
+      {Key? key,
+      required this.helper,
+      required this.hiveBox,
+      required this.index})
+      : super(key: key);
 
   final ModelClass helper;
   final Box hiveBox;
@@ -59,14 +60,16 @@ class SingleNote extends StatelessWidget {
           ],
         ),
         child: GestureDetector(
-          onTap: (){Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => NoteEditData(
-                index: index,
-                name: helper.name,
+          onTap: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => NoteEditData(
+                  index: index,
+                  name: helper.name,
+                ),
               ),
-            ),
-          );},
+            );
+          },
           child: Container(
             width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.all(8),
@@ -102,4 +105,3 @@ class SingleNote extends StatelessWidget {
     );
   }
 }
-

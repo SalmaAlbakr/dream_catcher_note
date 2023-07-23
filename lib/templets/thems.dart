@@ -14,28 +14,3 @@ class buildTheme{
 
   buildTheme( this.maintheme,  this.isDark);
 }
-/*
-MaterialApp(
-title: 'App Title',
-theme: ThemeData(
-brightness: Brightness.light,
-*/
-/* light theme settings *//*
-
-),
-darkTheme: ThemeData(
-brightness: Brightness.dark,
-*/
-/* dark theme settings *//*
-
-),
-themeMode: ThemeMode.dark,
-*/
-/* ThemeMode.system to follow system theme,
-         ThemeMode.light for light theme,
-         ThemeMode.dark for dark theme
-      *//*
-
-debugShowCheckedModeBanner: false,
-home: YourAppHomepage(),
-);*/
